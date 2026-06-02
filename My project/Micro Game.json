@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 268,
+    "build": 261,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -52,7 +52,9 @@
     "authorIds": [],
     "authorUsernames": [],
     "categories": [],
-    "playableDevices": [],
+    "playableDevices": [
+      "mobile"
+    ],
     "extensionProperties": [],
     "platforms": [
       {
@@ -62,7 +64,34 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": []
+    "resources": [
+      {
+        "file": "dfsfs.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "dfsfs.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "universfield-gunshot-352466.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "universfield-gunshot-352466.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "dfsfs2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "dfsfs2.png",
+        "smoothed": true,
+        "userAdded": false
+      }
+    ]
   },
   "objects": [],
   "objectsFolderStructure": {
@@ -162,6 +191,68 @@
             "lineHeight": 0,
             "color": "0;0;0"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Impact",
+          "persistentUuid": "0caaf1d9-cdac-402e-8722-88fc4a1293d6",
+          "preScale": 0.2,
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "dfsfs2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 181.5,
+                        "y": 173
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "centre",
+                        "x": 182.5,
+                        "y": 174.5
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 18,
+                            "y": 26
+                          },
+                          {
+                            "x": 341,
+                            "y": 26
+                          },
+                          {
+                            "x": 341,
+                            "y": 330
+                          },
+                          {
+                            "x": 18,
+                            "y": 330
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -169,10 +260,115 @@
         "children": [
           {
             "objectName": "NewText"
+          },
+          {
+            "objectName": "Impact"
           }
         ]
       },
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Impact",
+                "MouseX() ",
+                "MouseY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Impact",
+                "\"ImpactTime\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "universfield-gunshot-352466.mp3",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"ShootTime\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "Impact",
+                "\"ImpactTime\"",
+                ">=",
+                "0.10"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Impact",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -242,12 +438,24 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "Effect",
           "type": "EffectCapability::EffectBehavior"
         },
         {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
         },
         {
           "name": "Scale",
