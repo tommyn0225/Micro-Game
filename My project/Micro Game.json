@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 261,
+    "build": 270,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -18,6 +18,7 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
+    "useDeprecatedZeroAsDefaultStringVariable": true,
     "version": "1.0.0",
     "name": "Micro Game",
     "description": "",
@@ -90,6 +91,18 @@
         "name": "dfsfs2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Revolver.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Revolver.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Western FPS 2D/Weapon/f8964d82e439e999c3ac25192ff89ece1c07fe18e3f2935d9ad27091e0f96bf7_Revolver.png",
+          "name": "Revolver.png"
+        }
       }
     ]
   },
@@ -135,13 +148,13 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
-          "name": "NewText",
-          "persistentUuid": "2efd71bf-5f38-4818-966a-638a3e540868",
+          "layer": "UI",
+          "name": "GunViewModel",
+          "persistentUuid": "d68d94c5-4160-4981-accd-fe360cfa9be7",
           "width": 0,
-          "x": 615,
-          "y": 150,
-          "zOrder": 1,
+          "x": 640,
+          "y": 680,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -253,6 +266,67 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "b00c8b8989db089fe9f70e77beed442fe190c0e6a36067796c8a3c1c0a5e422f",
+          "name": "GunViewModel",
+          "persistentUuid": "2799a820-d948-4559-b5d4-ece66df9623b",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.025,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Revolver.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 83,
+                            "y": 0
+                          },
+                          {
+                            "x": 83,
+                            "y": 44
+                          },
+                          {
+                            "x": 0,
+                            "y": 44
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -263,6 +337,9 @@
           },
           {
             "objectName": "Impact"
+          },
+          {
+            "objectName": "GunViewModel"
           }
         ]
       },
@@ -271,6 +348,23 @@
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": []
+        },
+        {
+          "aiGeneratedEventId": "01KT6A46ZCGT4SYQ9YP33R3VRM",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "GunViewModel",
+                "=",
+                "ToDeg(atan2(MouseY() - GunViewModel.Y(), MouseX() - GunViewModel.X()))"
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -434,6 +528,24 @@
               }
             }
           ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
