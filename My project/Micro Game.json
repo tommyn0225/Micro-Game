@@ -379,6 +379,102 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Western FPS 2D/Background Element/Background/1532fe7a8e6c84b7b2547f1b3e9c3430546bd0adc86262971d99897b8ebef730_tiled_Sky Background.png",
           "name": "tiled_Sky Background.png"
         }
+      },
+      {
+        "file": "assets/Red barrel.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Red barrel.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle4",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle5",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle6.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle6",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle7.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle7",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle8.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle8",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle9.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Idle9",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Idle9.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Ground.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Ground",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -447,8 +543,9 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "c4679d49348c768eb96e512b552c09e817a025791423eb758b9568acf0e888c9",
-      "name": "FatBird",
+      "name": "FatBarrel",
       "persistentUuid": "749ab4ee-fe12-463d-8bf7-66ba9e0c6833",
+      "preScale": 0.4,
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -456,316 +553,17 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "Idle",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": true,
-              "timeBetweenFrames": 0.125,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_6.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_7.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Idle_8.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Ground",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
+              "metadata": "{\"pskl\":{}}",
               "timeBetweenFrames": 0.25,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "FatBird_Ground_1.png",
+                  "image": "Ground",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -781,476 +579,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 2,
-                        "y": 5
+                        "x": 0,
+                        "y": 0
                       },
                       {
-                        "x": 37,
-                        "y": 5
+                        "x": 80,
+                        "y": 0
                       },
                       {
-                        "x": 37,
-                        "y": 44
+                        "x": 80,
+                        "y": 98
                       },
                       {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Ground_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Ground_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Ground_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Fall",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.25,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Fall_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Fall_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Fall_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Fall_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Hit",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.2,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Hit_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Hit_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Hit_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Hit_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "FatBird_Hit_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 5
-                      },
-                      {
-                        "x": 37,
-                        "y": 44
-                      },
-                      {
-                        "x": 2,
-                        "y": 44
+                        "x": 0,
+                        "y": 98
                       }
                     ]
                   ]
@@ -1281,7 +623,7 @@
         "objectName": "Red_barrel"
       },
       {
-        "objectName": "FatBird"
+        "objectName": "FatBarrel"
       },
       {
         "objectName": "Sky_Background"
@@ -1693,7 +1035,7 @@
             "  vars.get(nextKey).setNumber(next);",
             "}",
             "tick(\"accBarrel\", \"nextBarrel\", \"Red_barrel\", 1);",
-            "tick(\"accBird\", \"nextBird\", \"FatBird\", 2.5);",
+            "tick(\"accBird\", \"nextBird\", \"FatBarrel\", 2.5);",
             "",
             "function physics(name) {",
             "  var arr = runtimeScene.getObjects(name);",
@@ -1708,7 +1050,7 @@
             "  }",
             "}",
             "physics(\"Red_barrel\");",
-            "physics(\"FatBird\");",
+            "physics(\"FatBarrel\");",
             "",
             "var im = runtimeScene.getGame().getInputManager();",
             "var down = im.isMouseButtonPressed(0);",
@@ -1726,7 +1068,7 @@
             "      }",
             "    }",
             "  }",
-            "  hit(\"FatBird\", 10);",
+            "  hit(\"FatBarrel\", 10);",
             "  hit(\"Red_barrel\", -10);",
             "}",
             "vars.get(\"mouseWasDown\").setNumber(down ? 1 : 0);",
