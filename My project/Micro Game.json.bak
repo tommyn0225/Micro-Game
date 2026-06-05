@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 261,
+    "build": 270,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -18,6 +18,7 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
+    "useDeprecatedZeroAsDefaultStringVariable": true,
     "version": "1.0.0",
     "name": "Micro Game",
     "description": "",
@@ -53,7 +54,6 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [
-      "mobile",
       "mobile"
     ],
     "extensionProperties": [],
@@ -700,6 +700,23 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 907,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Sky_Background",
+          "persistentUuid": "fc843167-5811-4319-b9d3-aa9fa9095963",
+          "width": 1635,
+          "x": -120,
+          "y": -24,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1012,8 +1029,9 @@
             "var G = 1400;",
             "var w = runtimeScene.getGame().getGameResolutionWidth();",
             "var h = runtimeScene.getGame().getGameResolutionHeight();",
+            "var gameOver = vars.get(\"gameOver\").getAsNumber() === 1;",
             "",
-            "// Fling",
+            "// Fling an object up from the bottom with a random parabolic arc",
             "function spawn(name, scale) {",
             "  var nb = runtimeScene.createObject(name);",
             "  if (nb) {",
@@ -1022,10 +1040,11 @@
             "    nb.vx = -300 + Math.random() * 600;",
             "    nb.vy = -(800 + Math.random() * 450);",
             "    nb.spin = -220 + Math.random() * 440;",
+            "    nb.entered = false;",
             "  }",
             "}",
             "",
-            "// Random spawn timer",
+            "// Independent random spawn timers",
             "function tick(accKey, nextKey, name, scale) {",
             "  var acc = vars.get(accKey).getAsNumber() + dt;",
             "  var next = vars.get(nextKey).getAsNumber();",
@@ -1034,28 +1053,44 @@
             "  vars.get(accKey).setNumber(acc);",
             "  vars.get(nextKey).setNumber(next);",
             "}",
-            "tick(\"accBarrel\", \"nextBarrel\", \"Red_barrel\", 1);",
-            "tick(\"accBird\", \"nextBird\", \"FatBarrel\", 2.5);",
             "",
-            "function physics(name) {",
+            "// Parabolic motion",
+            "function physics(name, isGood) {",
             "  var arr = runtimeScene.getObjects(name);",
             "  for (var i = arr.length - 1; i >= 0; i--) {",
             "    var b = arr[i];",
-            "    if (typeof b.vy !== \"number\") { b.vx = 0; b.vy = 0; b.spin = 60; }",
+            "    if (typeof b.vy !== \"number\") { b.vx = 0; b.vy = 0; b.spin = 60; b.entered = false; }",
             "    b.vy += G * dt;",
             "    b.setX(b.getX() + b.vx * dt);",
             "    b.setY(b.getY() + b.vy * dt);",
             "    b.setAngle(b.getAngle() + b.spin * dt);",
-            "    if (b.getY() > h + 200) { b.deleteFromScene(runtimeScene); }",
+            "    if (b.getY() < h - 100) { b.entered = true; }",
+            "    if (b.entered && isGood && b.getY() > h - 60) { vars.get(\"gameOver\").setNumber(1); }",
+            "    if (b.getY() > h + 220) { b.deleteFromScene(runtimeScene); }",
             "  }",
             "}",
-            "physics(\"Red_barrel\");",
-            "physics(\"FatBarrel\");",
+            "",
+            "if (!gameOver) {",
+            "  tick(\"accBarrel\", \"nextBarrel\", \"Red_barrel\", 1);",
+            "  tick(\"accBird\", \"nextBird\", \"FatBarrel\", 2.5);",
+            "  physics(\"Red_barrel\", false);",
+            "  physics(\"FatBarrel\", true);",
+            "}",
+            "",
+            "gameOver = vars.get(\"gameOver\").getAsNumber() === 1;",
             "",
             "var im = runtimeScene.getGame().getInputManager();",
             "var down = im.isMouseButtonPressed(0);",
             "var wasDown = vars.get(\"mouseWasDown\").getAsNumber() === 1;",
-            "if (down && !wasDown) {",
+            "var click = down && !wasDown;",
+            "vars.get(\"mouseWasDown\").setNumber(down ? 1 : 0);",
+            "",
+            "if (click && gameOver) {",
+            "  gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, runtimeScene.getName(), false);",
+            "  return;",
+            "}",
+            "",
+            "if (click && !gameOver) {",
             "  var cx = gdjs.evtTools.input.getCursorX(runtimeScene, \"\", 0);",
             "  var cy = gdjs.evtTools.input.getCursorY(runtimeScene, \"\", 0);",
             "  function hit(name, pts) {",
@@ -1068,15 +1103,19 @@
             "      }",
             "    }",
             "  }",
-            "  hit(\"FatBarrel\", 10);",
-            "  hit(\"Red_barrel\", -10);",
+            "  hit(\"FatBarrel\", 10); // good target: +10",
+            "  hit(\"Red_barrel\", -10); // bad target: -10",
             "}",
-            "vars.get(\"mouseWasDown\").setNumber(down ? 1 : 0);",
             "",
-            "// Update the score text",
+            "// Score and game over text",
             "var txts = runtimeScene.getObjects(\"NewText\");",
-            "if (txts.length > 0) { txts[0].setString(\"Score: \" + vars.get(\"Score\").getAsNumber()); }",
-            ""
+            "if (txts.length > 0) {",
+            "  if (gameOver) {",
+            "    txts[0].setString(\"GAME OVER\\nFinal Score: \" + vars.get(\"Score\").getAsNumber() + \"\\nClick to restart\");",
+            "  } else {",
+            "    txts[0].setString(\"Score: \" + vars.get(\"Score\").getAsNumber());",
+            "  }",
+            "}"
           ],
           "parameterObjects": "",
           "useStrict": true,
@@ -1141,6 +1180,60 @@
         }
       ],
       "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Background",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        },
         {
           "ambientLightColorB": 200,
           "ambientLightColorG": 200,
