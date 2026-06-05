@@ -1214,7 +1214,7 @@
             "if (txts.length > 0) {",
             "  var t0 = txts[0];",
             "  if (gameOver) {",
-            "    var head = (vars.get(\"endReason\").getAsString() === \"drop\") ? \"YOU LET ONE DROP!\" : \"TIME!\";",
+            "    var head = (vars.get(\"endReason\").getAsString() === \"drop\") ? \"YOU LET THE WRONG TYPE OF BARREL DROP!\" : \"TIME!\";",
             "    t0.setPosition(440, 240);",
             "    t0.setString(head + \"\\nScore: \" + vars.get(\"Score\").getAsNumber() + \"\\nHigh Score: \" + glob.get(\"HighScore\").getAsNumber());",
             "  } else {",
